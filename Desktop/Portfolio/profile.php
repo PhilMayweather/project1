@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 require 'connect.php';
 // require("inculdes/connect.php")
 
@@ -7,7 +7,7 @@ $sql = "SELECT * FROM porto WHERE email = '$email'";
 $query = mysqli_query($conn, $sql);
 
 $row = mysqli_fetch_assoc($query);
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +17,9 @@ $row = mysqli_fetch_assoc($query);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- <link rel="stylesheet" href="profile.css"> -->
     <style type="text/css">
-                body{
-            background-image: url('background.jpg');
-            text-align: left
+            body{
+        background-image: url('background.jpg');
+        text-align: left
         }
         #logo-img{
             width: 70px;
@@ -33,14 +33,11 @@ $row = mysqli_fetch_assoc($query);
             background-color: rgb(48, 48, 48);
             
         }
-        .logo{
-            float: left;
-            margin-left: 50px;
-        }
         #div2{
             width: 0 auto;
             margin: 0 auto;
             height: 400px;
+            text-align: center;
             background-image: url('macbook.jpg');
             background-size: 100% 100%;
             border: 1px solid black; 
@@ -108,16 +105,16 @@ $row = mysqli_fetch_assoc($query);
             padding: 4px;
             margin-top: 0;
             font-size: 20px;
-            color: black
+            color: whitesmoke
         }
         a:hover{
-            background-color: white;
+            background-color: skyblue;
             border-radius: 5%;
-            
+            height: 30px
         }
         ul li{
             list-style: none;
-			display: inline;
+            display: inline;
         }
         ul{
 
@@ -137,26 +134,17 @@ $row = mysqli_fetch_assoc($query);
             margin: 5px;
             border-radius: 20px;
         }
-        .inf{
-            width: 500px;
-            padding: 40px;
-            margin: 5px;
-            transition: transform .5s;
-        }
-        .inf:hover{
-            transform: scale(1.5);
 
-        }
         #do div{
             margin: 50px;
             padding: 50px;
             border: 1px black solid;
-            background-color: white
+            background-color: skyblue;
         }
+
         #done{
             display: flex;
-            height:300px;
-            border: 1px grey solid;
+            height: 150px;
             border-radius:20px;
             positon: relative;
             margin: 100px;
@@ -165,20 +153,46 @@ $row = mysqli_fetch_assoc($query);
             background-attachment: fixed;
             background-size: 100% 100%;
         }
+        .inf{
+            margin: 5px; 
+            transition: transform .5s;
+        }
+        .inf img{
+            height: 150px;
+            width: 100%;
+            border-radius: 5%
+        }
+        .inf:hover{
+            transform: scale(1.5);
+
+        }
         figure{
             margin: 0 0 0 0;
         }
-        h1{
-            margin-top: 0;
-            /* margin-bottom: -200px; */
+        .logo{
+            float:left;
+            color: whitesmoke;
+            margin-left:100px;
+            margin-top: -20px;
+            font-family: fantasy;
+            font-style: italic;
+        }
+        .project{
             text-align: center;
-            text-decoration: underline
+            color: black;
+            font-size: 40px;
+            margin-bottom: -100px;
+            font-weight: bolder;
         }
     </style>
 </head>
 <body>
     <header>
+
         <div id="div1">
+        <div class="logo">
+            <h1>PhilMayweather</h1>
+        </div>
             <ul>
                 <li><a href="login.php">Admin Login</a></li>
                 <li><a href="">Social</a></li>
@@ -207,20 +221,23 @@ $row = mysqli_fetch_assoc($query);
         <div class="info" >
             <figure><img src="designer.svg" alt=""><strong> CONTACT INFO </strong></figure>
             
-            <p>Facebook:<?php echo $row["facebook"];?><br>Twitter:<?php echo $row["twitter"];?><br>Instagram:<?php echo $row["instagram"];?></p>
+            <p><strong>Faceboook</strong>:<?php echo $row["facebook"];?><br><strong>Twitter</strong>:<?php echo $row["twitter"];?><br><strong>Instagram</strong>:<?php echo $row["instagram"];?></p>
         </div>
         <div class="info" >
             <figure><img src="frontend.svg" alt=""><strong>PERSONAL INFO</strong></figure>
-            <p>Name:Olulu Philip</p>
+            <p><strong>Name</strong>:Olulu Philip Ebi</p>
+            <p><strong>Skills</strong>: High proficiency in HTML & CSS<br>Javascript</p>
         </div>
         <div class="info" >
             <figure><img src="mentor.svg" alt=""><strong>ABOUT ME</strong></figure>
-            <p>I'm a Front-end developer<br>currently working with OlotuSquare.<br> I build simple and dynamic websites<br> for best UI/UX.</p>
+            <p>I'm Philip Olulu, A Front-end developer<br>currently working with OlotuSquare, Port Harcourt<br> I build simple and dynamic websites<br> for best UI/UX.</p>
         </div>
     </div>
-    <h1>My Projects</h1>
+    <div class="project">
+    <h2>My Projects</h2>
+    </div>
     <div id="done">
-        <div class="inf">
+        <div class="inf" onclick>
             <img src="one.jpg" alt="">
         </div>
         <div class="inf" >
@@ -229,9 +246,10 @@ $row = mysqli_fetch_assoc($query);
         <div class="inf" >
             <img src="three.jpg" alt="">
         </div>
-        <div class="inf">
+        <div class="inf" >
             <img src="four.jpg" alt="">
         </div>
+    </div>
     </div>
     <footer id="foot"><p>2018 &copy; copyright | OLOTU SQUARE Web Design</p></footer>
 </body>
